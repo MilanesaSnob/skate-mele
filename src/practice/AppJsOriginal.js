@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/NavBar';
-import CardWithClass from './practice/CardWithClass';
+import CardWithClass from './components/CardWithClass';
 
 /*
 const styles = {
