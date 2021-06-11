@@ -1,14 +1,18 @@
 import React from 'react';
 import './NavBar.css';
+import CartWidget from './CartWidget';
 
 
 function NavBar() {
     return (
-        <nav style={{backgroundColor: 'orange', overflow: 'hidden', width:'100%'}}>
-            <a className="active" href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-        </nav>
+        <div className="Top-nav"> 
+            <nav>
+                <a className="active" href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+                <CartWidget />
+            </nav>
+        </div>
 
     )
 }
