@@ -36,7 +36,7 @@ export default class CardWithClass extends React.Component {
         this.setState({contador : this.state.contador + 1})
     }
     restar = () => {
-        if(this.state.contador == 0){
+        if(this.state.contador === 0){
             // le hago el return para que vuelva (no siga pasando) y quede en 0
             return
         }
