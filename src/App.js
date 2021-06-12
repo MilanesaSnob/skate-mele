@@ -1,7 +1,7 @@
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-
+import CardContainer from './components/CardContainer/CardContainer';
 
 
 
@@ -16,6 +16,7 @@ function App() {
         <h4>
           Tu tienda de Skate
         </h4>
+        <CardContainer />
       </main>
     </div>
   );

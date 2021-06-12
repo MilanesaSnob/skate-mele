@@ -43,7 +43,7 @@ export default class CardWithClass extends React.Component {
         this.setState({contador : this.state.contador - 1})
     }
 
-    // render nos permite devolver el HTML
+    // render es el ciclo de vida que nos permite devolver el HTML
     render(){
         return (
             <div>

@@ -1,0 +1,18 @@
+.Card-container {
+    width: 80vw;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.Card {
+    border: thin solid #282c34; 
+    border-radius: 8px;
+    width: 18vw;
+    margin: 9px;
+    background: white;
+    padding: 16px;
+    font-size: .8em;
+    text-align: left;
+}
