@@ -1,6 +1,7 @@
-import { render } from '@testing-library/react';
 import React from 'react';
 import './CardContainer.css';
+import Card from './Card.js';
+
 
 //Creamos un array de objetos que va a contener a nuestros objetos
 const referensData = [
@@ -57,13 +58,7 @@ export default class CardContainer extends React.Component {
     render(){
         return(
             <div className="Card-container">
-                {this.state.referens.map((item) => 
-                <div className="Card">
-                    <p>{item.message}</p>
-                    {item.user.name}<br/>
-                    {item.user.course}
-                </div>
-                )}
+                {this.state.referens.map((item) => <Card {...item}/>)}
             </div>
         )
     }

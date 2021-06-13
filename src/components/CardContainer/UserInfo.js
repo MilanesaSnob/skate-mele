@@ -1,20 +1,26 @@
 import React from 'react';
 
+const styles = {
+    img: {
+        borderRadius: '50%',
+        width: '50px'
+        
+    }
+}
+
 // creamos un componente de funcion para traernos el item con el destructuring
-export default function UserInfo({name, course, photo}){
+function UserInfo({name, course, photo}){
 
     return (
         <div>
-            <img src={photo} alt="foto perfil" />
-            <h4>{name}</h4>
-            <h5>{course}</h5>
+            <img src={photo} alt="foto perfil" style={styles.img}/>
+            <div className="CardInfo">
+                <span>{name}</span>
+                <span>{course}</span>
+            </div>
+
         </div>
     )
 }
 
-
-
-<div className="Card">
-                    <p>{item.message}</p>
-                    <UserInfo />
-                </div>
+export default UserInfo;
