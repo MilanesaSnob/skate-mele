@@ -1,8 +1,9 @@
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import CardContainer from './components/CardContainer/CardContainer';
-
+/*import CardContainer from './components/CardContainer/CardContainer';
+import CardWithClass from './practice/CardWithClass';*/
+import CardContainerHooks from './components/CardContainer/CardContainerHooks';
 
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
         <h4>
           Tu tienda de Skate
         </h4>
-        <CardContainer />
+        <CardContainerHooks />
       </main>
     </div>
   );

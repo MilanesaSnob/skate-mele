@@ -38,6 +38,7 @@ export default class CardWithClass extends React.Component {
     restar = () => {
         if(this.state.contador === 0){
             // le hago el return para que vuelva (no siga pasando) y quede en 0
+            // La sentencia return finaliza la ejecución de la función y especifica un valor para ser devuelto a quien llama a la función.
             return
         }
         this.setState({contador : this.state.contador - 1})
@@ -46,7 +47,7 @@ export default class CardWithClass extends React.Component {
     // render es el ciclo de vida que nos permite devolver el HTML
     render(){
         return (
-            <div>
+            <div style={{textAlign: 'center'}}>
                 <h1>{'Hola ' + this.props.hola}</h1>
                 <p>Los props son para pasarle propiedades a los hijos, o sea, información a un componente</p>
                 <h2>TESTEANDO CARD WITH CLASS</h2>

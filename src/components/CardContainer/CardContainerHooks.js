@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect} from 'react';
 import Card from './Card.js';
 import './CardContainer.css';
 
@@ -46,39 +46,13 @@ const referensData = [
     },
 ]
 
-export default class CardContainer extends React.Component {
-
-    constructor(){
-        super();
-        this.state = {
-            //Lo inicializamos en la clase
-            referens: referensData,
-            contador: 0
-        }
-    }
-    /* Se puede inicializar sin constructor() y en ese caso no necesita el this
-    state = {
-        //Lo inicializamos en la clase
-        referens: referensData,
-        contador: 0
-    }
-    */
-
-    componentDidMount(){
-        console.log('Hola, ya estoy Renderizado');
-    }
-
-    componetDidUpdate(){
-        console.log('Hola, me estoy actualizando');
-    }
-
-    /* Defino un nuevo metodo de la clase para pasar por props*/
-    buttonFunction = () => {
-        alert('Funcion del padre CardContainer enviada mediante props a su hijo Card')
-    }
+function CardContainerHooks() {
+    // debo declarar un useState por cafa propiedad que tenga
+    const [referens, seteoReferencias] = useState(referensData);
+    const [contador, seteoContador] = useState(0);
 
     /* Defino el método para agregar cards */ 
-    addNewCard = () => {
+    const addNewCard = () => {
         /* Creo la nueva referencia que se va a agregar*/
         const newReference = {
                 message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
@@ -89,22 +63,26 @@ export default class CardContainer extends React.Component {
                 }
         }
         /* Le digo que me liste las referencias y me agregue la que acabo de crear */
-        this.setState({
-            referens: [ ... this.state.referens, newReference]
-        })
+        seteoReferencias([...referens, newReference])
     }
 
-    //map nos ejecuta una función por cada elemento dentro de nuestro array y nos devuelve un nuevo arreglo, nunca usar {for()} en React
-    //map es inmutable en cambio el for nos muta y se arma despiole 
-    //item vendria a ser cada uno de nuestros objetos (message, user, etc)
-    render(){
-        return(
-            <div className="Card-container">
-                {this.state.referens.map((item) => 
-                    <Card {...item} buttonFunction={this.buttonFunction}/>)}
-
-                <button onClick={this.addNewCard} style={{position:'fixed', top:'10vh', left:'0'}}>Agregar Card</button>    
-            </div>
-        )
+    /* Defino un nuevo metodo de la clase para pasar por props*/
+    const buttonFunction = () => {
+        alert('Funcion del padre CardContainer enviada mediante props a su hijo Card')
     }
+
+    /* A diferencia de las clases utilizamos useEffect para los ciclos de vida */
+    useEffect(() => { console.log('esto es un component DidMount')}, [])  //No le paso nada en el array[] asi que no se renderiza 
+    useEffect(() => { console.log('esto es un component DidUpdate')}, [referens])  // Le paso la data y me actualiza
+
+    return(
+        <div className="Card-container">
+            {referens.map((item) => 
+                <Card {...item} buttonFunction={buttonFunction}/>)}
+
+            <button onClick={addNewCard} style={{position:'fixed', top:'10vh', left:'0'}}>Agregar Card</button>    
+        </div>
+    )
 }
+
+export default CardContainerHooks
