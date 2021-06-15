@@ -1,4 +1,5 @@
 import React from 'react';
+import ItemCount from './ItemCount';
 import './ItemListContainer.css';
 
 export default class ItemListContainer extends React.Component {
@@ -7,6 +8,7 @@ export default class ItemListContainer extends React.Component {
         return (
             <div>
                 <h1>{'Hola ' + this.props.greetings}</h1>
+                <ItemCount stock={5} initial={1} onAdd={() => alert('se agregó al carrito')}/>
             </div>
         )        
     }

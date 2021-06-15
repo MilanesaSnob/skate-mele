@@ -47,9 +47,9 @@ const referensData = [
 ]
 
 function CardContainerHooks() {
-    // debo declarar un useState por cafa propiedad que tenga
+    // debo declarar un useState por cafa propiedad que tenga (una para referens, otra para contador, etc)
     const [referens, seteoReferencias] = useState(referensData);
-    const [contador, seteoContador] = useState(0);
+    //const [contador, seteoContador] = useState(0);
 
     /* Defino el método para agregar cards */ 
     const addNewCard = () => {
