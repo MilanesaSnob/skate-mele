@@ -1,9 +1,10 @@
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import ItemListCont from './components/ItemListContainer/ItemListCont';
-/*import CardContainer from './components/CardContainer/CardContainer';
-import CardWithClass from './practice/CardWithClass';*/
-import CardContainerHooks from './components/CardContainer/CardContainerHooks';
+import ItemListContainer from './components/CardContainer/ItemListContainer';
+//import CardContainer from './components/CardContainer/CardContainer';
+//import CardWithClass from './practice/CardWithClass';
+//import CardContainerHooks from './components/CardContainer/CardContainerHooks';
 
 
 
@@ -14,11 +15,12 @@ function App() {
         <NavBar/>
       </header>
       <main>
+      
         <ItemListCont greetings="Martin"/>
         <h4>
           Tu tienda de Skate
         </h4>
-        <CardContainerHooks />
+        <ItemListContainer />
       </main>
     </div>
   );
