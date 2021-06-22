@@ -2,7 +2,7 @@ import React from 'react';
 import ItemCount from './ItemCount';
 import './ItemListContainer.css';
 
-export default class ItemListContainer extends React.Component {
+export default class ItemListCont extends React.Component {
 
     render(){
         return (
