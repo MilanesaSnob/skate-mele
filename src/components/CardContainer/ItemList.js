@@ -1,12 +1,13 @@
 import React from 'react';
 import Item from './Item';
+import ItemListCont from './ItemListCont';
 import './ItemListContainer.css';
 
-function ItemList({message, user, buttonFunction}){
+function ItemList({producto}){
     return(
         <div className="CardStyle">
-            <p>{message}</p>
-            <Item {...user}/>
+            <Item {...producto}/>
+            <ItemListCont/>
         </div>
     )
 }

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './ItemListContainer.css';
 
 
 /* Funcion flecha*/
@@ -21,12 +22,12 @@ const ItemCount = ({stock: initialStock, initial, onAdd}) => {
 
     return(
         <div>
-            <div style={{width:'200px', margin:'0 auto', display: 'flex', flexDirection:'row', justifyContent:'space-between'}}>
+            <div className="CardCount">
                 <button onClick={() => {contador > 0 && setContador(contador - 1)}}> - </button>
                 <span>{contador}</span>
                 <button onClick={addContador}> + </button>
             </div>
-            <div>
+            <div className="CardAdd">
                 <button onClick={onAdd}>Agregar</button>
             </div>
         </div>    

@@ -1,6 +1,5 @@
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
-import ItemListCont from './components/ItemListContainer/ItemListCont';
 import ItemListContainer from './components/CardContainer/ItemListContainer';
 //import CardContainer from './components/CardContainer/CardContainer';
 //import CardWithClass from './practice/CardWithClass';
@@ -15,8 +14,6 @@ function App() {
         <NavBar/>
       </header>
       <main>
-      
-        <ItemListCont greetings="Martin"/>
         <h4>
           Tu tienda de Skate
         </h4>

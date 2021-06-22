@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .Card-container .CardStyle {
@@ -21,14 +22,6 @@
     font-size: .8em;
     font-style: italic;
 }
-
-.Card-container .CardStyle div {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-top: .5em;
-    text-align: left;
-}
 .Card-container .CardStyle div .CardInfo {
     display: flex;
     flex-direction: column;
@@ -39,15 +32,33 @@
 
 .Card-container .CardStyle div .CardInfo span:nth-child(2) {
     color:tomato;
-    font-size: 0.8em;
+    font-size: 1em;
     font-weight: bold;
 }
 
-
-
-.Card-container .CardStyle img {
-    height: 50px;
-    margin-right: 16px;
+.Card-container .CardStyle div .CardInfo img {
+    border-radius: 8px;
+    width: 100%;
+    height: 200px;
 }
 
+.Card-container .CardStyle div .CardInfo span {
+    margin: 10px 0 0 0;
+    font-size: .8em;
+}
+
+.Card-container .CardStyle .CardCount {
+    margin: 16px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.Card-container .CardStyle .CardCount button {
+    width: 25px;
+    height: 25px;
+}
+.Card-container .CardStyle .CardAdd button {
+    width: 100%;
+    padding: 15px 0;
+}
 
