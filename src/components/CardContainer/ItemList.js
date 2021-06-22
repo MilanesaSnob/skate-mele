@@ -1,13 +1,12 @@
 import React from 'react';
 import Item from './Item';
-//import './CardContainer.css';
+import './ItemListContainer.css';
 
 function ItemList({message, user, buttonFunction}){
     return(
         <div className="CardStyle">
             <p>{message}</p>
             <Item {...user}/>
-            <button onClick={buttonFunction} >Recibo mi función</button>
         </div>
     )
 }

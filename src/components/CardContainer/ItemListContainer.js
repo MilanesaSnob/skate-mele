@@ -1,6 +1,7 @@
+import { reject, resolve } from 'q';
 import React, { useState, useEffect} from 'react';
 import ItemList from './ItemList';
-//import './CardContainer.css';
+import './ItemListContainer.css';
 
 //Creamos un array de objetos que va a contener a nuestros objetos
 const referensData = [
@@ -48,8 +49,7 @@ const referensData = [
 
 function ItemListContainer() {
     // debo declarar un useState por cafa propiedad que tenga (una para referens, otra para contador, etc)
-    const [referens, seteoReferencias] = useState(referensData);
-    //const [contador, seteoContador] = useState(0);
+    const [referens, seteoReferencias] = useState([]);
 
     /* Defino el método para agregar cards */ 
     const addNewCard = () => {
@@ -66,21 +66,27 @@ function ItemListContainer() {
         seteoReferencias([...referens, newReference])
     }
 
-    /* Defino un nuevo metodo de la clase para pasar por props*/
-    const buttonFunction = () => {
-        alert('Funcion del padre CardContainer enviada mediante props a su hijo Card')
-    }
 
-    /* A diferencia de las clases utilizamos useEffect para los ciclos de vida */
-    useEffect(() => { console.log('esto es un component DidMount')}, [])  //No le paso nada en el array[] asi que no se renderiza 
-    useEffect(() => { console.log('esto es un component DidUpdate')}, [referens])  // Le paso la data y me actualiza
+    /* DidMount */
+    useEffect(() => { 
+        new Promise((resolve, reject) => {
+            setTimeout(resolve(referensData), 10000)
+        }).then(
+            (referenceResolve) => {
+                seteoReferencias(referenceResolve)
+            }
+        )
+
+    }, [])  
+
+     /* DidUpdate */
+    useEffect(() => { console.log('esto es un component DidUpdate')}, [referens])  
 
     return(
         <div className="Card-container">
             {referens.map((item) => 
-                <ItemList {...item} buttonFunction={buttonFunction} />)}
-
-            <button onClick={addNewCard} style={{position:'fixed', top:'10vh', left:'0'}}>Agregar Card</button>    
+                <ItemList {...item} />)}
+  
         </div>
     )
 }

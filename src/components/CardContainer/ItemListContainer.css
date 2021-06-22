@@ -1,0 +1,53 @@
+.Card-container {
+    width: 80vw;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.Card-container .CardStyle {
+    border: thin solid #282c34; 
+    border-radius: 8px;
+    width: 18vw;
+    margin: 9px;
+    background: white;
+    padding: 16px;
+    font-size: .8em;
+    text-align: left;
+}
+
+.Card-container .CardStyle p {
+    font-size: .8em;
+    font-style: italic;
+}
+
+.Card-container .CardStyle div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: .5em;
+    text-align: left;
+}
+.Card-container .CardStyle div .CardInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: var(--main-fg-color);
+    text-align: left;
+}
+
+.Card-container .CardStyle div .CardInfo span:nth-child(2) {
+    color:tomato;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+
+
+.Card-container .CardStyle img {
+    height: 50px;
+    margin-right: 16px;
+}
+
+
